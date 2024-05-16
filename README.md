@@ -19,19 +19,17 @@ Planet radius (earth units): `pl_rade`
 The data should be sorted by `releasedate`
 
 This can be displayed on the home page below the existing text or on a new page, 
-up to you. Something that fits in line with existing styling, but do also include some 'pretty bits' that you feel fits in with the general look and feel.
+up to you. Something that fits in line with existing styling, but do also include some of your own flair, features that you feel enhance the application and any visual changes that you think make it look a little prettier :) 
+
+Otherwise go for it.
 
 ## Running the project
 First, run the development server:
 
 ```bash
-npm run dev
+npm i && npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn && yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
