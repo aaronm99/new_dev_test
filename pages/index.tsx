@@ -6,6 +6,7 @@ import Intro from "@/components/Intro";
 import Planets, { PlanetDataType } from "@/components/Planets";
 import getPlanetData from "@/lib/get-planet-data";
 import { Roboto } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -30,6 +31,9 @@ export default function Home({
         <Intro />
         <Planets planetData={planetData} />
       </main>
+      <footer className={roboto.className}>
+        <Footer />
+      </footer>
     </>
   );
 }

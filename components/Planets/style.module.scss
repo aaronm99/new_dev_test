@@ -1,15 +1,29 @@
 .planets {
   max-width: 1300px;
   padding: 0 48px;
+
   width: 100%;
-  h1 {
+  h2 {
     font-size: 3.75rem;
     font-weight: 700;
     margin: 1rem 0;
-    // text-align: center;
   }
 }
 
 .planet__table {
-  min-height: 762px;
+  min-height: 800px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.heading__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
