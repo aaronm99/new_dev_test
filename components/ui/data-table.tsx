@@ -142,7 +142,7 @@ export const getColumns = ({ sorting }: { sorting: SortingState }) => {
   ] as ColumnDef<PlanetDataType>[];
 };
 
-export function DataTableDemo({ data }: { data: PlanetDataType[] }) {
+export function DataTable({ data }: { data: PlanetDataType[] }) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [tableData, setTableData] = React.useState<PlanetDataType[]>(data);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -174,7 +174,7 @@ export function DataTableDemo({ data }: { data: PlanetDataType[] }) {
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between py-4">
+      <div className="flex items-center justify-between py-4 flex-wrap-reverse md:flex-nowrap">
         <Input
           placeholder="Filter Planets..."
           value={(table.getColumn("plName")?.getFilterValue() as string) ?? ""}
@@ -183,7 +183,7 @@ export function DataTableDemo({ data }: { data: PlanetDataType[] }) {
           }
           className="max-w-sm"
         />
-        <div className="flex justify-end space-x-6">
+        <div className="flex justify-between w-full mb-2 md:mb-0 md:w-auto md:justify-end space-x-6">
           <div className="flex items-center space-x-2">
             <Label htmlFor="airplane-mode">Show Duplicates</Label>
             <Switch
@@ -276,8 +276,8 @@ export function DataTableDemo({ data }: { data: PlanetDataType[] }) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-10 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
+      <div className="flex items-center justify-between md:justify-end md:space-x-10 py-4">
+        <div className="flex-1 text-sm text-muted-foreground hidden md:block">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </div>
@@ -319,6 +319,10 @@ export function DataTableDemo({ data }: { data: PlanetDataType[] }) {
             Next
           </Button>
         </div>
+      </div>
+      <div className="text-sm text-muted-foreground md:hidden flex items-center justify-center mb-4 w-full">
+        Page {table.getState().pagination.pageIndex + 1} of{" "}
+        {table.getPageCount()}
       </div>
     </div>
   );

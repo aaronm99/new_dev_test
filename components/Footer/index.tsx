@@ -74,7 +74,7 @@ const Footer = () => {
             href="#top"
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-            className="absolute right-16 bottom-0 w-10 h-20 cursor-pointer"
+            className="absolute right-1 md:right-16 bottom-0 w-10 h-20 cursor-pointer"
           >
             <ArrowUp className="w-10 h-10" />
 

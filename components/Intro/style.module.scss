@@ -13,3 +13,17 @@
     margin: 1rem 0;
   }
 }
+
+@media (max-width: 600px) {
+  .intro {
+    h1 {
+      margin-bottom: 0;
+      font-size: 3.5rem;
+    }
+    p {
+      font-size: 1.3rem;
+
+      margin: 0.75rem 0;
+    }
+  }
+}

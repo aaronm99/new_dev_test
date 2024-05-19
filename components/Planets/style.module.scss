@@ -27,3 +27,20 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media (max-width: 600px) {
+  .heading__wrapper {
+    flex-direction: column;
+    min-height: auto;
+    align-items: start;
+  }
+  .planet__table {
+    min-height: 0px;
+  }
+  .planets {
+    padding: 0 24px;
+    h2 {
+      margin: 0;
+    }
+  }
+}

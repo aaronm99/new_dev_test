@@ -61,3 +61,21 @@
   cursor: not-allowed;
   display: block;
 }
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    padding: 24px;
+  }
+  .trademark {
+    position: relative;
+    grid-column: span 4 / span 4;
+  }
+  .row {
+    grid-column: span 4 / span 4;
+  }
+  .footer {
+    height: auto;
+  }
+}

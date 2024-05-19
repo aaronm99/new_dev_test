@@ -1,5 +1,6 @@
 import MemoGlobe from "@/components/globe";
 import Cards from "@/components/ui/cards";
+import { DataTable } from "@/components/ui/data-table";
 import {
   Select,
   SelectContent,
@@ -10,12 +11,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/utils";
+import { motion } from "framer-motion";
 import { LayoutGrid, List } from "lucide-react";
-import style from "./style.module.scss";
 import React from "react";
-import { DataTableDemo } from "@/components/ui/data-table";
-import { motion, AnimatePresence } from "framer-motion";
-import useFadeInAnimation from "@/hooks/use-fade-in";
+import style from "./style.module.scss";
 
 export type PlanetDataType = {
   plName: string;
@@ -40,7 +39,7 @@ const Planets = ({ planetData }: { planetData: PlanetDataType[] | [] }) => {
         <div className={style.heading__wrapper}>
           <div className="flex items-center">
             <h2 id="planets">Planets</h2>
-            <div className="-ml-16">
+            <div className="-ml-16 hidden sm:block">
               <MemoGlobe />
             </div>
           </div>
@@ -83,7 +82,7 @@ const Planets = ({ planetData }: { planetData: PlanetDataType[] | [] }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.85 }}
           >
-            <DataTableDemo data={planetData} />
+            <DataTable data={planetData} />
           </motion.div>
         )}
         {view === "grid" && (

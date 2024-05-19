@@ -5,7 +5,7 @@ const World = dynamic(() => import("./ui/globe").then((m) => m.World), {
   ssr: false,
 });
 
-function GlobeDemo() {
+function Globe() {
   const globeConfig = {
     pointSize: 4,
     globeColor: "#0e49c4",
@@ -399,6 +399,6 @@ function GlobeDemo() {
   );
 }
 
-const MemoGlobe = memo(GlobeDemo);
+const MemoGlobe = memo(Globe);
 
 export default MemoGlobe;
