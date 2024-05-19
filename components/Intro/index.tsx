@@ -1,17 +1,24 @@
 import useFadeInAnimation from "@/hooks/use-fade-in";
 import style from "./style.module.scss";
 import { motion } from "framer-motion";
+import { ModeToggle } from "@/components/theme";
+import Particles from "@/components/ui/particles";
+import { useTheme } from "next-themes";
 
 const Intro = () => {
   const fadeInAnimation = useFadeInAnimation();
   const fadeInAnimationParagraph = useFadeInAnimation(0.3);
+  const { theme } = useTheme();
 
   return (
     <div className={style.intro}>
       <div className="relative">
-        <motion.h1 {...fadeInAnimation} id="cosmos">
-          Cosmos
-        </motion.h1>
+        <div className="flex items-center justify-between">
+          <motion.h1 {...fadeInAnimation} id="cosmos">
+            Cosmos
+          </motion.h1>
+          <ModeToggle />
+        </div>
         <motion.p {...fadeInAnimationParagraph}>
           {`Once you have an innovation culture, even those who are not scientists
           or engineers - poets, actors, journalists - they, as communities,
@@ -32,6 +39,15 @@ const Intro = () => {
           one else is going to paint 'Starry Night' by van Gogh.`}
         </motion.p>
       </div>
+      {theme === "dark" && (
+        <div className="absolute top-0 left-1/2 -z-10  h-full w-full -translate-x-1/2">
+          <Particles
+            className="absolute inset-0 -z-10"
+            quantity={35}
+            staticity={30}
+          />
+        </div>
+      )}
     </div>
   );
 };
