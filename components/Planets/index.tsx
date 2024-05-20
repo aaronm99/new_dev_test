@@ -65,7 +65,7 @@ const Planets = ({ planetData }: { planetData: PlanetDataType[] | [] }) => {
                 <SelectItem value="grid">
                   <div className={cn("space-x-2", style.select)}>
                     <LayoutGrid />
-                    <p>Grid</p>
+                    <p>Cards</p>
                   </div>
                 </SelectItem>
               </SelectGroup>
