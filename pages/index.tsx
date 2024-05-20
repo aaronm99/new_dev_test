@@ -42,7 +42,12 @@ export async function getStaticProps() {
   try {
     const planetData = await getPlanetData();
 
-    const restructuredData: PlanetDataType[] = planetData.map(
+    // filtering out incomplete data
+    const filteredData = planetData.filter(
+      (planet: any) => planet.pl_name && planet.releasedate && planet.pl_rade
+    );
+
+    const restructuredData: PlanetDataType[] = filteredData.map(
       (planet: any) => ({
         plName: planet.pl_name,
         releaseDate: planet.releasedate,

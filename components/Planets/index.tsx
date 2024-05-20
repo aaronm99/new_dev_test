@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/utils";
+import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import { LayoutGrid, List } from "lucide-react";
 import React from "react";

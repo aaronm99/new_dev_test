@@ -13,7 +13,7 @@ const Intro = () => {
   return (
     <div className={style.intro}>
       <div className="relative">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-1 md:mb-1">
           <motion.h1 {...fadeInAnimation} id="cosmos">
             Cosmos
           </motion.h1>

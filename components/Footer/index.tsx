@@ -15,7 +15,7 @@ const Footer = () => {
       hidden: {
         opacity: 0,
         display: "block",
-        y: -10, // Animate y to 0 for fade in
+        y: -10,
         transition: {
           opacity: { duration: 0.25, ease: "easeOut" },
           display: { delay: 0 },
@@ -23,11 +23,11 @@ const Footer = () => {
       },
       visible: {
         opacity: 1,
-        y: 0, // Animate y to 0 for fade in
+        y: 0,
         display: "block",
         transition: {
           opacity: { duration: 0.25, ease: "easeIn", delay: 0.1 },
-          y: { duration: 0.25, ease: "easeIn" }, // Animate y to 0 for fade in
+          y: { duration: 0.25, ease: "easeIn" },
           display: { delay: 0 },
         },
       },
@@ -74,7 +74,7 @@ const Footer = () => {
             href="#top"
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-            className="absolute right-1 md:right-16 bottom-0 w-10 h-20 cursor-pointer"
+            className="absolute right-5 md:right-16 bottom-0 w-10 h-20 cursor-pointer"
           >
             <ArrowUp className="w-10 h-10" />
 

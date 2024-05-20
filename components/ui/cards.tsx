@@ -21,7 +21,7 @@ const Cards = ({ data }: { data: PlanetDataType[] | [] }) => {
         opts={{
           align: "start",
         }}
-        className="w-[75%] mx-auto sm:mx-0 sm:w-full"
+        className="w-[75%] mx-auto lg:mx-0 sm:w-[90%] lg:w-full"
       >
         <CarouselContent>
           {data.map((x, index) => (

@@ -54,7 +54,6 @@ export const getColumns = ({ sorting }: { sorting: SortingState }) => {
   return [
     {
       accessorKey: "plName",
-      // header: "Planet Name",
       header: ({ column }) => {
         return (
           <Button
@@ -75,9 +74,7 @@ export const getColumns = ({ sorting }: { sorting: SortingState }) => {
           </Button>
         );
       },
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("plName")}</div>
-      ),
+      cell: ({ row }) => <div className="">{row.getValue("plName")}</div>,
     },
     {
       accessorKey: "releaseDate",
@@ -106,7 +103,6 @@ export const getColumns = ({ sorting }: { sorting: SortingState }) => {
     },
     {
       accessorKey: "plRade",
-      // header: () => <div className="text-right">Radius</div>,
       header: ({ column }) => {
         return (
           <div className="flex justify-end">
@@ -144,7 +140,9 @@ export const getColumns = ({ sorting }: { sorting: SortingState }) => {
 
 export function DataTable({ data }: { data: PlanetDataType[] }) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [tableData, setTableData] = React.useState<PlanetDataType[]>(data);
+  const [tableData, setTableData] = React.useState<PlanetDataType[]>(
+    uniqWith(data, isEqual)
+  );
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
@@ -185,7 +183,7 @@ export function DataTable({ data }: { data: PlanetDataType[] }) {
         />
         <div className="flex justify-between w-full mb-2 md:mb-0 md:w-auto md:justify-end space-x-6">
           <div className="flex items-center space-x-2">
-            <Label htmlFor="airplane-mode">Show Duplicates</Label>
+            <Label htmlFor="duplicates">Show Duplicates</Label>
             <Switch
               onCheckedChange={(e) => {
                 if (e) {
@@ -194,7 +192,7 @@ export function DataTable({ data }: { data: PlanetDataType[] }) {
                   setTableData(uniqWith(data, isEqual));
                 }
               }}
-              id="airplane-mode"
+              id="duplicates"
             />
           </div>
           <DropdownMenu>
@@ -279,7 +277,7 @@ export function DataTable({ data }: { data: PlanetDataType[] }) {
       <div className="flex items-center justify-between md:justify-end md:space-x-10 py-4">
         <div className="flex-1 text-sm text-muted-foreground hidden md:block">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
-          {table.getPageCount()}
+          {table.getPageCount() < 1 ? "1" : table.getPageCount()}
         </div>
         <div className="flex items-center space-x-2">
           <p className="text-sm font-medium">Rows per page</p>
