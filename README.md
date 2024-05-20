@@ -33,3 +33,10 @@ yarn && yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Additional Notes
+- Sorted by release date by default
+- Ability to sort by each column
+- View as a list or as cards
+- Fully responsive
+- Dark theme (with a little surprise)
